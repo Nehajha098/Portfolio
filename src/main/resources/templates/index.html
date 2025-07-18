@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand text-light" href="#">Neha Jha</a>
+        <a class="navbar-brand" href="#" style="color:rgb(219, 7, 102)">Neha Jha</a>
         <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -34,8 +34,8 @@
 <header>
     <div class="container text-center" data-aos="fade-down" data-aos-duration="900" data-aos-delay="300" data-aos-easing="ease-in">
         <img src="/images/devimage.png" class="img-fluid" alt="dev-image">
-        <h1>Hi! My name is Neha Jha.</h1>
-        <p class="lead">B.tech student | Aspiring Software Engineer | Java Web developer enthusiast</p>
+        <h1>Hi! My name is <span style="color:rgb(219, 7, 102)">Neha</span></h1>
+        <p class="lead"><span class="typed-text"></span></p>
         <div class="container personal">
             <a class="nav-link" href="#">My Resume</a>
             <a class="nav-link" href="https://github.com/Nehajha098" target="_blank">Github</a>
@@ -81,6 +81,7 @@
             <li class="list-group-item">Amazon clone - HTML, CSS</li>
             <li class="list-group-item">Simple Calculator - HTML, CSS, JS</li>
             <li class="list-group-item">Games - HTML, CSS, JS</li>
+            <li class="list-group-item">Forms - Sign in, Registration using frontend, backend and databases</li>
         </ul>
     </div>
 </section>
@@ -102,7 +103,7 @@
             <label for="exampleInputMessage" class="form-label">Message</label>
             <input type="text" class="form-control" id="exampleInputMessage" th:field="*{message}">
         </div>
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" class="btn btn-outline-danger">Send</button>
     </form>
     </div>
 </section>
@@ -118,6 +119,16 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init(); // initialize AOS
+</script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    new Typed(".typed-text", {
+        strings: ["a B.tech student", "an Aspiring Software Engineer", "a Java Web developer enthusiast"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+    });
+
 </script>
 </body>
 
