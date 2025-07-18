@@ -1,0 +1,108 @@
+/* Prevent horizontal scrolling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+
+header {
+    color: white;
+    background: #343a40;
+    padding: 100px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.freepik.com/free-vector/abstract-black-lines-geometric-background_677411-2748.jpg?semt=ais_hybrid&w=740') center/cover no-repeat;
+}   
+
+section {
+    padding: 60px;
+}
+
+footer {
+    background: #343a40;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+.nav-item {
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.5s ease-in-out;
+  border-radius: 5px; /* Optional: looks cleaner with some rounding */
+  padding: 5px 10px;
+}
+
+.nav-item:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
+
+.navbar-brand, .nav-link {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.personal {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.img-fluid {
+    height: 200px;
+}
+
+img {
+    border-radius: 50%;
+}
+
+#about {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+#skills {
+    background-color: #232323;
+    color: #e8e8e8;
+}
+
+#skills .list-group-item {
+    background-color: #2c2c2c;
+    border: none;
+    color: #dcdcdc;
+}
+
+#projects {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+}
+
+#projects .list-group-item {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: none;
+}
+
+#contact {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+#contact input, #contact textarea {
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 1px solid #444;
+}
