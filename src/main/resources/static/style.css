@@ -21,11 +21,11 @@ body {
 
 
 header {
-    height: 30rem;
+    height: 100vh;
     color: white;
     background: #343a40;
     padding: 100px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.freepik.com/free-vector/abstract-black-lines-geometric-background_677411-2748.jpg?semt=ais_hybrid&w=740') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/background.png') center/cover no-repeat;
 }
 
 section {
@@ -37,6 +37,10 @@ footer {
     padding: 15px;
     color: white;
     text-align: center;
+}
+
+.navbar {
+    background : transparent;
 }
 
 .nav-item {
@@ -57,6 +61,18 @@ footer {
 
 .personal {
     margin-top: 50px;
+}
+
+.personal button {
+    margin-top : 50px;
+}
+
+.personal button a{
+    color : #20C997;
+}
+
+.personal button a:hover {
+    color : black;
 }
 
 i {
@@ -81,42 +97,208 @@ img {
     border-radius: 50%;
 }
 
+.resume {
+    border: 2px solid #20C997;
+    color: #20C997;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    transition: 0.4s;
+}
+
+.resume:hover {
+    background-color: #20C997;
+    color: #121212;
+    box-shadow: 0 0 20px rgba(32, 201, 151, 0.4);
+}
+
 #about {
     background-color: #1e1e1e;
     color: #f0f0f0;
 }
 
 #skills {
-    background-color: #232323;
-    color: #e8e8e8;
+    background-color: #232323; /* Matching your existing dark theme */
+    padding: 80px 0;
 }
 
-#skills .list-group-item {
-    background-color: #2c2c2c;
-    border: none;
-    color: #dcdcdc;
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-badges .badge {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle dark background */
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 12px;
+    color: #f0f0f0; /* Default text color light */
+    border: 1px solid rgba(32, 201, 151, 0.3); /* Subtle theme border */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+/* Icon specific color to make them pop */
+.skill-badges .badge i {
+    font-size: 18px;
+    margin-right: 0; /* Resetting your global i margin */
+    color: #20C997;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.skill-badges .badge:hover {
+    background-color: #20C997;
+    color: #121212;
+    transform: translateY(-5px) scale(1.05);
+    border-color: #20C997;
+    box-shadow: 0 10px 20px rgba(32, 201, 151, 0.2);
+}
+
+.skill-badges .badge:hover i {
+    color: #121212; /* Icon turns dark on hover to stay readable */
 }
 
 #projects {
-    background-color: #1a1a1a;
-    color: #f5f5f5;
+    background-color: #1f1f1f;
+    padding: 100px 0;
 }
 
-#projects .list-group-item {
-    background-color: #2a2a2a;
-    color: #fff;
-    border: none;
+.project-card {
+    background: #242424;
+    border-radius: 15px;
+    height: 100%;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #20C997; /* Your theme color */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    color: #20C997;
+    margin-bottom: 20px;
+}
+
+.project-title {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.project-description {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-tags span {
+    background: rgba(32, 201, 151, 0.1);
+    color: #20C997;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid rgba(32, 201, 151, 0.2);
 }
 
 #contact {
-    background-color: #1f1f1f;
+    background-color: #1a1a1a;
     color: #ffffff;
 }
 
 #contact input, #contact textarea {
-    background-color: #2c2c2c;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
     color: #fff;
-    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#contact input:focus {
+    background-color: #222;
+    border-color: #20C997;
+    box-shadow: 0 0 8px rgba(32, 201, 151, 0.2);
+    outline: none;
+}
+
+.btn-outline-success {
+    border-color: #20C997;
+    color: #20C997;
+}
+
+.btn-outline-success:hover {
+    background-color: #20C997;
+    border-color: #20C997;
+    color: #000;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #252525;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.contact-info-item:hover {
+    border-color: #20C997;
+    transform: translateX(10px);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(32, 201, 151, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.icon-box i {
+    font-size: 20px;
+    margin: 0; /* Removing the global margin */
+    color: #20C997;
+}
+
+.contact-info-item h5 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.contact-info-item p {
+    color: #b0b0b0;
+    margin: 0;
 }
 
 h3 {
@@ -134,20 +316,254 @@ h3 {
     align-items: center;
 }
 
-@media (max-width: 768px) {
+#education {
+    background-color: #1a1a1a;
+    padding: 100px 0;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.education-dot {
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #20C997;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #20C997;
+}
+
+.education-content {
+    background: #252525;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.education-content:hover {
+    transform: scale(1.02);
+    background: #2a2a2a;
+}
+
+.edu-date {
+    color: #20C997;
+    font-weight: bold;
+}
+
+.bg-outline-success {
+    border: 1px solid #20C997;
+    color: #20C997;
+}
+
+.d-flex h4 {
+    color : gray;
+}
+
+.terminal-window {
+    background: #121212;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #333;
+}
+
+.terminal-header {
+    background: #252525;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot { height: 12px; width: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-title {
+    color: #888;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.terminal-body {
+    padding: 20px;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+.prompt { color: #20C997; }
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background: #20C997;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+#coding-practice {
+    background-color: #1a1a1a;
+}
+
+#coding-practice > h3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Tablet:992px and below — ease spacing, keep hero readable */
+@media (max-width: 991.98px) {
+    section {
+        padding: 48px 24px;
+    }
+
     header {
-    padding: 80px 20px 40px 20px;
-    height: auto;
-  }
+        padding: 96px 32px 56px;
+        min-height: auto;
+    }
 
-  .intro {
-    flex-direction: column-reverse;
-    gap: 2rem;
-    text-align: center;
-  }
+    .intro {
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        justify-content: center;
+    }
 
-  .img-fluid {
-    width: 10rem;
-    height: 10rem;
-  }
+    #skills {
+        padding: 64px 0;
+    }
+
+    #projects {
+        padding: 72px 0;
+    }
+
+    #education {
+        padding: 72px 0;
+    }
+
+    .terminal-window {
+        max-width: 100%;
+    }
+}
+
+/* Small tablet / large phone:768px and below — stack hero, tighten layout */
+@media (max-width: 767.98px) {
+    section {
+        padding: 40px 16px;
+    }
+
+    header {
+        padding: 80px 20px 40px;
+        height: auto;
+        min-height: 0;
+    }
+
+    .intro {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .img-fluid {
+        width: min(14rem, 72vw);
+        height: auto;
+        max-width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+    .typed-text {
+        display: inline-block;
+        min-height: 24px;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .lead {
+        font-size: 1rem;
+        min-height: 26px;
+    }
+
+    .personal {
+        margin-top: 32px;
+    }
+
+    i {
+        margin-right: 20px;
+    }
+
+    .education-content .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+
+    .contact-info-item:hover {
+        transform: none;
+    }
+}
+
+/* Phone:576px and below — maximum padding reduction, smaller UI chrome */
+@media (max-width: 575.98px) {
+    section {
+        padding: 32px 12px;
+    }
+
+    header {
+        padding: 72px 14px 28px;
+    }
+
+    header h1 {
+        font-size: clamp(1.5rem, 6vw + 0.75rem, 2rem);
+    }
+
+    .intro {
+        gap: 1.5rem;
+    }
+
+    .img-fluid {
+        width: min(12rem, 78vw);
+    }
+
+    .skill-badges {
+        gap: 12px;
+    }
+
+    .skill-badges .badge {
+        font-size: 0.85rem;
+        padding: 10px 14px;
+    }
+
+    .terminal-body {
+        padding: 14px;
+        font-size: 0.875rem;
+        line-height: 1.55;
+    }
+
+    .terminal-title {
+        font-size: 0.72rem;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    #coding-practice > h3 {
+        font-size: clamp(1rem, 4vw + 0.5rem, 1.35rem);
+    }
 }
