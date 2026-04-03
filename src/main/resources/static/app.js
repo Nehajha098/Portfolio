@@ -2,7 +2,12 @@ const name = document.querySelector("#exampleInputName");
 const email = document.querySelector("#exampleInputEmail1");
 const sendbutn = document.querySelector("#btn");
 
-sendbutn.addEventListener("click", sendData);
+const navbar = document.querySelector(".navbar");
+const navbarCollapseEl = document.getElementById("navbarNav");
+
+if (sendbutn) {
+    sendbutn.addEventListener("click", sendData);
+}
 
 function sendData(event) {
     event.preventDefault();
@@ -27,4 +32,13 @@ function sendData(event) {
     }
 
     alert("Message sent successfully.");
+}
+
+if (navbar && navbarCollapseEl) {
+    navbarCollapseEl.addEventListener("shown.bs.collapse", () => {
+        navbar.classList.add("navbar-dark-bg");
+    });
+    navbarCollapseEl.addEventListener("hidden.bs.collapse", () => {
+        navbar.classList.remove("navbar-dark-bg");
+    });
 }

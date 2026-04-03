@@ -40,7 +40,13 @@ footer {
 }
 
 .navbar {
-    background : transparent;
+    background: transparent;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar.navbar-dark-bg {
+    background-color: #212529;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 .nav-item {
@@ -518,8 +524,70 @@ h3 {
     }
 }
 
+/* Enhanced About Text */
+.lead-text {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    line-height: 1.8;
+}
+
+.sub-text {
+    color: #b0b0b0;
+    margin-top: 15px;
+}
+
+.lead-text b, .lead-text strong {
+    color: #20C997;
+}
+
+/* Skill Category Cards */
+.skill-category-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(32, 201, 151, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.skill-category-card:hover {
+    border-color: #20C997;
+    background: rgba(32, 201, 151, 0.05);
+}
+
+.skill-category-card h5 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Updated Badges */
+.skill-badges-v2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge-v2 {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.badge-v2:hover {
+    background: #20C997;
+    color: #121212;
+    transform: translateY(-2px);
+}
+
 /* Phone:576px and below — maximum padding reduction, smaller UI chrome */
-@media (max-width: 575.98px) {
+@media (max-width: 950px) {
     section {
         padding: 32px 12px;
     }
@@ -565,5 +633,9 @@ h3 {
 
     #coding-practice > h3 {
         font-size: clamp(1rem, 4vw + 0.5rem, 1.35rem);
+    }
+
+    header {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/background2.png') center/cover no-repeat;
     }
 }
