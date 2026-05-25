@@ -48,21 +48,65 @@
 </header>
 
 <section id="about">
-    <div class="container" data-aos="fade-up" data-aos-duration="800">
-        <h3 class="text-center mb-4">About Me</h3>
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <p class="lead-text">
-                    I am a **Computer Science undergraduate** at Sister Nivedita University with a passion for building robust, scalable web applications.
-                    With a **9.02 CGPA** and a strong foundation in **Data Structures & Algorithms**, I focus on writing clean, efficient code and solving complex architectural challenges.
+    <div class="container" data-aos="fade-up">
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT TEXT -->
+            <div class="col-lg-7">
+                <h2 class="about-title">About <span>Me</span></h2>
+
+                <p class="about-text">
+                    I am a <span>Computer Science undergraduate</span> at Sister Nivedita University
+                    with a passion for building <span>robust, scalable</span> web applications.
                 </p>
-                <p class="sub-text">
-                    Whether it's developing AI-powered tools like **Notely** or architecting mentorship platforms like **Mentora**,
-                    I thrive at the intersection of **Java backend logic** and **modern React interfaces**. I am currently seeking
-                    opportunities to contribute to high-impact Software Engineering teams.
+
+                <p class="about-text">
+                    With a <span>9.02 CGPA</span> and strong foundation in
+                    <span>Data Structures & Algorithms</span>, I focus on writing
+                    clean, efficient code.
+                </p>
+
+                <p class="about-text">
+                    I enjoy building <span>AI-powered tools</span> and working with
+                    <span>Java backend</span> and <span>React</span>.
+                </p>
+
+                <p class="about-text">
+                    Currently seeking opportunities in
+                    <span>Software Engineering</span>.
                 </p>
             </div>
+
+            <!-- RIGHT CARDS -->
+            <div class="col-lg-5">
+                <div class="about-cards">
+
+                    <div class="about-card">
+                        <h5>💻 Clean Code</h5>
+                        <p>Efficient, scalable and maintainable coding practices.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h5>🧠 Problem Solver</h5>
+                        <p>Strong DSA & analytical thinking ability.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h5>⚡ Fast Learner</h5>
+                        <p>Quickly adapts to new tools & technologies.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h5>🤝 Team Player</h5>
+                        <p>Collaborates effectively in team environments.</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+
     </div>
 </section>
 
@@ -262,7 +306,7 @@
                 <label for="exampleInputMessage" class="form-label">Message</label>
                 <input type="text" class="form-control" id="exampleInputMessage" th:field="*{message}">
             </div>
-            <button type="submit" class="btn btn-outline-success">Send</button>
+            <button id="btn" type="submit" class="btn btn-outline-success">Send</button>
         </form>
     </div>
 </section>

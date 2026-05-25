@@ -10,7 +10,6 @@ if (sendbutn) {
 }
 
 function sendData(event) {
-    event.preventDefault();
 
     let isValid = true;
 
@@ -20,25 +19,17 @@ function sendData(event) {
     }
 
     if(email.value.trim() === "") {
-          isValid = false;
-          alert("Sender email is required!");
+        isValid = false;
+        alert("Sender email is required!");
     } else if(!email.value.includes("@") || !email.value.includes(".")) {
         isValid = false;
         alert("Enter a valid email!");
     }
 
     if(!isValid) {
-        throw new Error("Failed to send message!");
+        event.preventDefault(); // ONLY block when invalid
+        return;
     }
 
-    alert("Message sent successfully.");
-}
-
-if (navbar && navbarCollapseEl) {
-    navbarCollapseEl.addEventListener("shown.bs.collapse", () => {
-        navbar.classList.add("navbar-dark-bg");
-    });
-    navbarCollapseEl.addEventListener("hidden.bs.collapse", () => {
-        navbar.classList.remove("navbar-dark-bg");
-    });
+    // allow form submission
 }
