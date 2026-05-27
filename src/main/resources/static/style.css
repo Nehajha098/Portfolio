@@ -64,11 +64,18 @@ p, li, .nav-link, .form-label, .project-description, .contact-info-item p {
 
 
 header {
-    height: 100vh;
+    min-height: 100vh;
     color: white;
-    background: #343a40;
-    padding: 100px;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/background.png') center/cover no-repeat;
+    padding: 100px 40px;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)),
+        url("/images/background1.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 section {
@@ -715,10 +722,6 @@ h3 {
     #coding-practice > h3 {
         font-size: clamp(1rem, 4vw + 0.5rem, 1.35rem);
     }
-
-    header {
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/background2.png') center/cover no-repeat;
-    }
 }
 
 /* ABOUT SECTION REDESIGN */
@@ -817,5 +820,49 @@ h3 {
 
     .terminal-body {
         font-size: 0.84rem;
+    }
+}
+
+/* HEADER RESPONSIVE BACKGROUND FIX */
+
+/* TABLETS */
+@media (max-width: 950px) {
+    header {
+        background:
+            linear-gradient(rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)),
+            url('/images/background1.png');
+
+        background-position: top center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #111;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    header {
+            background:
+                linear-gradient(rgba(0,0,0,0.65),
+                rgba(0,0,0,0.65)),
+                url('/images/background1.png');
+
+            background-position: center;
+            background-size: cover;
+        }
+}
+
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+    header {
+        padding-top: 100px;
+
+        background-position: center top;
+        background-size: cover;
     }
 }
