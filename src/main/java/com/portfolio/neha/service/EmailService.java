@@ -1,37 +1,50 @@
 package com.portfolio.neha.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+import com.resend.Resend;
+import com.resend.core.exception.ResendException;
+import com.resend.services.emails.model.CreateEmailOptions;
+import com.resend.services.emails.model.CreateEmailResponse;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmailService {
 
-    @Autowired
-    private JavaMailSender mailSender;
-
     public void sendEmail(String name, String email, String message) {
         System.out.println("🔥 EMAIL SERVICE CALLED");
+
+        // Pull the API key safely from Render's runtime environment
+        String apiKey = System.getenv("RESEND_API_KEY");
+
+        if (apiKey == null || apiKey.isEmpty()) {
+            System.out.println("❌ Email failed: RESEND_API_KEY environment variable is missing!");
+            return;
+        }
+
+        Resend resend = new Resend(apiKey);
+
         try {
-            SimpleMailMessage mail = new SimpleMailMessage();
+            // Build the email parameters cleanly
+            CreateEmailOptions params = CreateEmailOptions.builder()
+                    .from("Portfolio Contact <onboarding@resend.dev>")
+                    .to("nehajha22004@gmail.com")
+                    .replyTo(email)
+                    .subject("Portfolio Contact Message")
+                    .html("<p><strong>Name:</strong> " + name + "</p>" +
+                            "<p><strong>Email:</strong> " + email + "</p><br/>" +
+                            "<p><strong>Message:</strong></p>" +
+                            "<p>" + message.replace("\n", "<br/>") + "</p>")
+                    .build();
 
-            mail.setTo("nehajha22004@gmail.com");
-            mail.setReplyTo(email); // VERY IMPORTANT
-            mail.setSubject("Portfolio Contact Message");
+            // Send via the emails service resource
+            CreateEmailResponse response = resend.emails().send(params);
 
-            mail.setText(
-                    "Name: " + name + "\n" +
-                            "Email: " + email + "\n\n" +
-                            "Message:\n" + message
-            );
+            System.out.println("✅ Email sent successfully via Resend. ID: " + response.getId());
 
-            mailSender.send(mail);
-
-            System.out.println("✅ Email sent successfully");
-
+        } catch (ResendException e) {
+            System.out.println("❌ Email failed due to Resend API error");
+            e.printStackTrace();
         } catch (Exception e) {
-            System.out.println("❌ Email failed");
+            System.out.println("❌ Email failed due to a general exception");
             e.printStackTrace();
         }
     }
